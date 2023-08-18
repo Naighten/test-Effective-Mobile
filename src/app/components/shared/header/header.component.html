@@ -1,0 +1,28 @@
+<div class="container" style="border-bottom: 1px solid; padding-bottom: 5px">
+	<div class="header__wrapper" style="display: flex; gap: 10px">
+		{{ isLogin ? "Hello, " + login : "" }}
+
+		<button
+			type="button"
+			class="header__button login"
+			*ngIf="!isLogin"
+			(click)="signin()"
+		>
+			Login
+		</button>
+
+		<button
+			type="button"
+			class="header__button logout"
+			*ngIf="isLogin"
+			(click)="logout()"
+		>
+			Logout
+		</button>
+
+		<nav>
+			<a [routerLink]="['main']">main </a>
+			<a [routerLink]="['posts']">posts </a>
+		</nav>
+	</div>
+</div>

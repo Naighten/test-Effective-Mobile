@@ -1,1 +1,5 @@
-<p>postspage works!</p>
+<div class="container">
+	<div class="posts__wrapper">
+		<app-postitem *ngFor="let post of posts" [post]="post"></app-postitem>
+	</div>
+</div>

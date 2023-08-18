@@ -1,1 +1,35 @@
-<p>auth works!</p>
+<div class="container">
+	<div class="auth__wrapper">
+		<form action="" [formGroup]="authGroup">
+			<p class="auth__text">Login</p>
+			<input
+				type="text"
+				class="auth__input"
+				formControlName="login"
+				minlength="3"
+				required
+			/>
+
+			<p class="auth__text">Password</p>
+			<input type="text" class="auth__input" formControlName="password" />
+
+			<!-- *ngIf="isRegister" -->
+			<button
+				class="auth__button"
+				[disabled]="!authGroup.valid"
+				(click)="signin()"
+			>
+				Signin
+			</button>
+
+			<!-- *ngIf="!isRegister" -->
+			<button
+				class="auth__button"
+				[disabled]="!authGroup.valid"
+				(click)="signup()"
+			>
+				Signup
+			</button>
+		</form>
+	</div>
+</div>
